@@ -19,3 +19,6 @@ Route::get('/', function () {
 // 画面遷移はフロントエンドのVueRouterが制御する
 
 Route::get('/{any?}', fn() => view('index'))->where('any', '.+');
+
+// 会員登録
+Route::post('/register', 'Auth\RegisterController@register')->name('register');
