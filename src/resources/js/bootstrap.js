@@ -1,4 +1,4 @@
-const { getCookieValue } = require('./util');
+
 
 window._ = require('lodash');
 import {getCookieValue} from './util'
