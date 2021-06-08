@@ -68,8 +68,9 @@ export default {
       await this.$store.dispatch('auth/login', this.loginForm)
 
       // トップページに移動する
-      this.$router.push('/')
-      console.log(this.loginForm)
+      if(this.apiStatus) {
+        this.$router.push('/')
+      }
     },
     async register() {
       // authストアのresigterアクションを呼び出す
@@ -80,5 +81,10 @@ export default {
       console.log(this.registerForm)
     }
   },
+  computed: {
+    apiStatus() {
+      return this.$store.state.auth.apiStatus
+    }
+  }
 }
 </script>
